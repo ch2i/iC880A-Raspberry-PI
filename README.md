@@ -1,7 +1,7 @@
 Raspberry PI iC880A and LinkLab Lora Gateway Shield
 ===================================================
 
-At the begining this shield has been created to help wiring between Raspberry PI and ISMT [iC880A][10] LoraWan concentrator Gateway (SPI version) and them put the whole thing into a outdoor enclosure such as this [one][15].
+At the begining this shield has been created to help wiring between Raspberry PI and ISMT [iC880A][10] LoraWan concentrator Gateway (SPI version) and to be able to put the whole thing into a outdoor enclosure such as this [one][15].
 
 Then I decided to add some funky stuff such like:
 
@@ -10,8 +10,8 @@ Then I decided to add some funky stuff such like:
 - I2C and Grove connectors to be able to add internal/external sensors
 - Footprint for DC/DC step down if you want to do some simple [POE splitter][16] to power the whole thing
 - Footprint for a simple Lora module such as RFM95 that can be used a Single Channel Gateway or also act as a Lora Node
-- DC Barrel connector and terminal block
-- Four GPIO Led
+- Power with DC Barrel connector and terminal block
+- Four visual GPIO Led
 - Footprint for DHT1x Temperature/Humidity sensors
 - Easy to build, 0805 or PTH components
 - Holes to fix board on enclosure or other support
@@ -41,7 +41,7 @@ If you use linklanbs board you can use these [version][2] of packet_forwarder, i
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.png" alt="Bottom">     
 
-You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thunbails view but final boards are okay
+You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
 ### Assembled boards
