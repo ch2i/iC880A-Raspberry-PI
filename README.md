@@ -74,7 +74,7 @@ See news and other projects on my [blog][1]
  
 [1]: https://hallard.me
 [2]: https://github.com/ch2i/packet_forwarder
-[3]: https://PCBs.io/share/zka78
+[3]: https://PCBs.io/share/zvoQ4
 
 [10]: http://webshop.imst.de/ic880a-spi-lorawan-concentrator-868mhz.html
 [11]: http://forum.thethingsnetwork.org/t/raspberry-pi-lorawan-gateway-board/1071
