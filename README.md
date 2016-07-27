@@ -29,10 +29,15 @@ If you need to use sensors you can check out these [examples][12], they're just 
 If you use linklanbs board you can use these [version][2] of packet_forwarder, it has been modified to drive LED of linklabs boards and PPS modem line.
 
 ### Schematic
-![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/PI-Lora-Gateway-Shield-sch.png)  
+![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
 
 ### Boards 
+
+**Top Side**
+
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.png" alt="Top">    
+
+**Bottom Side**
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.png" alt="Bottom">     
 
