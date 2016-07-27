@@ -2130,11 +2130,13 @@ Please ensure your boards meet these minimum design rule requirements.</descript
 <wire x1="49.53" y1="70.485" x2="52.705" y2="70.485" width="0.3048" layer="16"/>
 <wire x1="52.705" y1="70.485" x2="54.61" y2="68.58" width="0.3048" layer="16"/>
 <via x="54.61" y="68.58" extent="1-16" drill="0.3556" diameter="0.7112"/>
-<wire x1="54.61" y1="68.58" x2="54.61" y2="64.77" width="0.3048" layer="1"/>
-<wire x1="54.61" y1="64.77" x2="74.93" y2="44.45" width="0.3048" layer="1"/>
-<wire x1="74.93" y1="44.45" x2="74.93" y2="38.735" width="0.3048" layer="1"/>
+<wire x1="74.93" y1="44.704" x2="74.93" y2="38.735" width="0.3048" layer="1"/>
 <wire x1="74.93" y1="38.735" x2="74.0372" y2="37.8422" width="0.3048" layer="1"/>
 <wire x1="72.955" y1="37.8422" x2="74.0372" y2="37.8422" width="0.3048" layer="1"/>
+<wire x1="74.93" y1="44.704" x2="73.914" y2="45.72" width="0.3048" layer="1"/>
+<wire x1="73.914" y1="45.72" x2="69.85" y2="45.72" width="0.3048" layer="1"/>
+<wire x1="69.85" y1="45.72" x2="54.61" y2="60.96" width="0.3048" layer="1"/>
+<wire x1="54.61" y1="60.96" x2="54.61" y2="68.58" width="0.3048" layer="1"/>
 </signal>
 <signal name="GND">
 <polygon width="0.3048" layer="1" isolate="0.3048">
