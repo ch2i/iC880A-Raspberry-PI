@@ -29,12 +29,12 @@ If you need to use sensors you can check out these [examples][12], they're just 
 If you use linklanbs board you can use these [version][2] of packet_forwarder, it has been modified to drive LED of linklabs boards and PPS modem line.
 
 ### Schematic
-![schematic](https://raw.githubusercontent.com/hallard/iC880A-Raspberry-PI/master/pictures/PI-Lora-Gateway-Shield-sch.png)  
+![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/PI-Lora-Gateway-Shield-sch.png)  
 
 ### Boards 
-<img src="https://raw.githubusercontent.com/hallard/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.png" alt="Top">    
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.png" alt="Top">    
 
-<img src="https://raw.githubusercontent.com/hallard/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.png" alt="Bottom">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.png" alt="Bottom">     
 
 You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thunbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
