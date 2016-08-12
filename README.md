@@ -1,6 +1,8 @@
 Raspberry PI iC880A and LinkLab Lora Gateway Shield
 ===================================================
 
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack" width="25%" height="25%">     
+
 At the begining this shield has been created to help wiring between Raspberry PI and ISMT [iC880A][10] LoraWan concentrator Gateway (SPI version) and to be able to put the whole thing into a outdoor enclosure such as this [one][15].
 
 Then I decided to add some funky stuff like:
