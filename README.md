@@ -37,10 +37,13 @@ I suggest to plug the connector into the PI to see space needed then plug the pl
 
 Software Installation is straightforward, just follow this excellent [wiki article][26]. Just one thing, as the reset pin on my board (GPIO17) is different than the one used in the article (GPIO25), you need to adjust startup script. Once installation is done, edit the startup file
 
-`nano /opt/ttn-gateway/bin/start.sh`
-then change line containing `SX1301_RESET_BCM_PIN=25` to `SX1301_RESET_BCM_PIN=17`
+`nano /opt/ttn-gateway/bin/start.sh`    
+then change line containing     
+`SX1301_RESET_BCM_PIN=25`    
+to     
+`SX1301_RESET_BCM_PIN=17`
 
-file should look like this
+then file should look like this
 ```shell
 #! /bin/bash
 
@@ -105,24 +108,14 @@ Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a J
 
 ### Boards 
 
-**Top Side**
+**PCB Received**
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.png" alt="Top">    
-
-**Bottom Side**
-
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.png" alt="Bottom">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-PCB.jpg" alt="PCB">    
 
 You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
 ### Assembled boards
-
-**PCB received**
-
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-PCB.jpg" alt="PCB">    
-
-**All Assembled with RPI downside**
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack">     
 
