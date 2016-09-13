@@ -35,6 +35,10 @@ Installation
 
 No specific documentation for now, it's just a kind of wiring helper, please see Gateway section on [TTN Wiki][13] and Installation is quite easy but as the plate need to go over RPI network and USB connector, you need to use a 2x20 Raspberry PI connector such as [this one][25] form adafruit. You can also find some on ebay.
 
+This specific version of [poly_packet_forwarder][30] for Raspbery PI use bcm2835 library, you need to install it before anything. See http://www.airspayce.com/mikem/bcm2835/
+
+For driving specific onboard LED with packet forwarder, please see the specific readme file of the [poly_packet_forwarder][30] to adjust you json config file.
+
 I suggest to plug the connector into the PI to see space needed then plug the plate to the connector and start soledering one pin on each edge so the connector will be fixed, then remove plate and connector and solder all other pins.
 
 Software Installation is straightforward, just follow this excellent [wiki article][26]. Just one thing, as the reset pin on my board (GPIO17) is different than the one used in the article (GPIO25), you need to adjust startup script. Once installation is done, edit the startup file
@@ -105,6 +109,7 @@ Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: FSK channel> radio 1, IF 300000 H
 Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a JSON object named gateway_conf, 
 ```
 
+
 ### Schematic
 ![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
 
@@ -166,3 +171,5 @@ See news and other projects on my [blog][1]
 
 [25]: https://www.adafruit.com/products/1979
 [26]: https://github.com/ttn-zh/ic880a-gateway/wiki
+
+[30]: https://github.com/ch2i/packet_forwarder/blob/master/poly_pkt_fwd/readme.md
