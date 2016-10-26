@@ -144,7 +144,11 @@ use only what you need dependings on what you want to do.
 
 ##License
 
-You can do whatever you like with this design as soon as you don't make it to push and sell it on the market (doing commercial business with it). If you want to do so, please contact me so we can organize an simple agreement.
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/)   
+<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">   
+
+If you want to do commercial stuff with this project, please contact me so we can organize an simple agreement.
+
 
 ##Misc
 See news and other projects on my [blog][1] 
