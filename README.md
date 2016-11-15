@@ -1,14 +1,14 @@
 Raspberry PI iC880A and LinkLab Lora Gateway Shield
 ===================================================
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack" width="25%" height="25%">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack">     
 
 At the begining this shield has been created to help wiring between Raspberry PI and ISMT [iC880A][10] LoraWan concentrator Gateway (SPI version) and to be able to put the whole thing into a outdoor enclosure such as this [one][15].
 
 Then I decided to add some funky stuff like:
 
 - Footprint for [iC880a][10] ISMT LoraWan concentrator (main goal)
-- Can be also used between LinkLabs [board][11] and Raspi
+- ~~Can be also used between LinkLabs [board][11] and Raspi~~
 - I2C and Grove connectors to be able to add internal/external sensors
 - Footprint for DC/DC step down if you want to do some simple [POE splitter][16] to power the whole thing thru a network cable
 - Footprint for a simple Lora module such as RFM95 that can be used a Single Channel Gateway or also act as a Lora Node
@@ -117,21 +117,25 @@ Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a J
 
 **PCB Received**
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-PCB.jpg" alt="PCB">    
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.jpg" alt="PCB TOP">    
+
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.jpg" alt="PCB TOP">    
+
 
 You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
-### Assembled boards
+### Assembled boards into nice enclosure
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/iC880A-mounted-enclosure enclosure.jpg" alt="Fully assembled and in nice enclosure">     
 
 ##Bill Of Material
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
 
-- Adjustable DC/DC step down like this [one][18] or this [one][19] (same footprint this is why I'm using this one) but there are so much even some directly to 5V
+- Adjustable DC/DC step down like this [one][18] or this [one][19] (same footprint this is why I'm using this one)
+- Fixed 5V DC/DC step down like this 3A [one][27] or this 1.5A [one][28] 
 - LED for 4 GPIO (4/23/18/24) are 3mm PTH or 0805, color of your choice
 - If you use RFM95, diode for DIO0/DIO1/DIO2 (if you want to use interrupts) are 1N4148 PTH or SOD123
 - POE Splitter such as [these][16] and POE injector as this [one][17]
@@ -139,7 +143,8 @@ use only what you need dependings on what you want to do.
 - D3 is 1N400x (1N4001, 1N4007, ..) whatever you have, PTH or DO214
 - DC/Barell power jack 
 - Grove connector and others at [seeedstudio][20]
-- Some PI connector with [long pins][21] for pluging this board and Linklabs one 
+- ~~Some PI connector with [long pins][21] for pluging this board and Linklabs one~~
+- Some 2X20 pins [PI connector][29] for pluging this board  
 - Antenna [UFL][22] with [IPEX][23] cable or [SMA][24] if using Lora Module
 
 ##License
@@ -174,5 +179,9 @@ See news and other projects on my [blog][1]
 
 [25]: https://www.adafruit.com/products/1979
 [26]: https://github.com/ttn-zh/ic880a-gateway/wiki
+
+[27]: http://www.ebay.com/itm/351674929937
+[28]: http://www.ebay.com/itm/371348168950
+[29]: http://www.ebay.com/itm/351588181858
 
 [30]: https://github.com/ch2i/packet_forwarder/blob/master/poly_pkt_fwd/readme.md
