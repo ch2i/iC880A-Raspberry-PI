@@ -115,9 +115,11 @@ Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a J
 
 ### Boards 
 
-**PCB Received**
+**Top side**
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.jpg" alt="PCB TOP">    
+
+**Bottom side**
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.jpg" alt="PCB TOP">    
 
@@ -127,14 +129,14 @@ PCBs.io give me some reward when you order my designed boards from their site. T
 
 ### Assembled boards into nice enclosure
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/iC880A-mounted-enclosure enclosure.jpg" alt="Fully assembled and in nice enclosure">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/iC880A-mounted-enclosure.jpg" alt="Fully assembled and in nice enclosure">     
 
 ##Bill Of Material
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
 
-- Adjustable DC/DC step down like this [one][18] or this [one][19] (same footprint this is why I'm using this one)
+- ~~Adjustable DC/DC step down like this [one][18] or this [one][19]~~
 - Fixed 5V DC/DC step down like this 3A [one][27] or this 1.5A [one][28] 
 - LED for 4 GPIO (4/23/18/24) are 3mm PTH or 0805, color of your choice
 - If you use RFM95, diode for DIO0/DIO1/DIO2 (if you want to use interrupts) are 1N4148 PTH or SOD123
