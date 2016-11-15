@@ -10,7 +10,7 @@ Then I decided to add some funky stuff like:
 - Footprint for [iC880a][10] ISMT LoraWan concentrator (main goal)
 - ~~Can be also used between LinkLabs [board][11] and Raspi~~
 - I2C and Grove connectors to be able to add internal/external sensors
-- Footprint for DC/DC step down if you want to do some simple [POE splitter][16] to power the whole thing thru a network cable
+- Footprint for DC/DC step down if you want to do some simple [POE splitter][16] to power the whole thing thru a network cable or any power 
 - Footprint for a simple Lora module such as RFM95 that can be used a Single Channel Gateway or also act as a Lora Node
 - Power with DC Barrel connector and terminal block
 - Four visual GPIO Led
@@ -148,6 +148,7 @@ use only what you need dependings on what you want to do.
 - ~~Some PI connector with [long pins][21] for pluging this board and Linklabs one~~
 - Some 2X20 pins [PI connector][29] for pluging this board  
 - Antenna [UFL][22] with [IPEX][23] cable or [SMA][24] if using Lora Module
+- Small Enclosure 125x125mm 75mm Height [#1][40] or [#2][41]
 
 ##License
 
@@ -161,7 +162,7 @@ See news and other projects on my [blog][1]
  
 [1]: https://hallard.me
 [2]: https://github.com/ch2i/packet_forwarder
-[3]: https://PCBs.io/share/zvoQ4
+[3]: https://PCBs.io/share/rmVdD
 
 [10]: http://webshop.imst.de/ic880a-spi-lorawan-concentrator-868mhz.html
 [11]: http://forum.thethingsnetwork.org/t/raspberry-pi-lorawan-gateway-board/1071
@@ -187,3 +188,6 @@ See news and other projects on my [blog][1]
 [29]: http://www.ebay.com/itm/351588181858
 
 [30]: https://github.com/ch2i/packet_forwarder/blob/master/poly_pkt_fwd/readme.md
+
+[40]: http://www.ebay.com/itm/262500056078
+[41]: http://www.aliexpress.com/item/Free-Shipping-Good-Quality-ABS-Material-Transparent-Cover-IP66-Waterproof-Electrical-Switch-Box-125-125-75mm/32522255056.html
