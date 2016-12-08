@@ -9,7 +9,7 @@ Then I decided to add some funky stuff like:
 
 - Footprint for [iC880a][10] ISMT LoraWan concentrator (main goal)
 - ~~Can be also used between LinkLabs [board][11] and Raspi~~
-- I2C and Grove connectors to be able to add internal/external sensors
+- I2C and Grove connectors to be able to add internal/external sensors such as BME280, SI7021 or HTU21D
 - Footprint for DC/DC step down if you want to do some simple [POE splitter][16] to power the whole thing thru a network cable or any power 
 - Footprint for a simple Lora module such as RFM95 that can be used a Single Channel Gateway or also act as a Lora Node
 - Power with DC Barrel connector and terminal block
@@ -41,74 +41,7 @@ For driving specific onboard LED with packet forwarder, please see the specific 
 
 I suggest to plug the connector into the PI to see space needed then plug the plate to the connector and start soledering one pin on each edge so the connector will be fixed, then remove plate and connector and solder all other pins.
 
-Software Installation is straightforward, just follow this excellent [wiki article][26]. Just one thing, as the reset pin on my board (GPIO17) is different than the one used in the article (GPIO25), you need to adjust startup script. Once installation is done, edit the startup file
-
-`nano /opt/ttn-gateway/bin/start.sh`    
-then change line containing     
-`SX1301_RESET_BCM_PIN=25`    
-to     
-`SX1301_RESET_BCM_PIN=17`
-
-then file should look like this
-```shell
-#! /bin/bash
-
-# Reset iC880a PIN
-SX1301_RESET_BCM_PIN=17
-echo "$SX1301_RESET_BCM_PIN"  > /sys/class/gpio/export
-...
-...
-```
-
-Then restart the service with
-```
-sudo systemctl restart ttn-gateway.service
-```
-
-You just need to do this once, on next startup all will start with good configuration.
-
-if you want to follow log file just type
-
-```shell
-sudo journalctl -f -u ttn-gateway.service
-
--- Logs begin at Thu 2016-08-11 21:09:47 CEST. --
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: ### [GPS] ###
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: # Invalid gps time reference (age: 1471011382 sec)
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: # Manual GPS coordinates: latitude 46.62477, longitude 0.43528, altitude 104 m
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: ##### END #####
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: INFO: End of upstream thread
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: INFO: End of downstream thread for server  0.
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: INFO: concentrator stopped successfully
-Aug 12 16:16:27 pi04 ttn-gateway[1525]: INFO: Exiting packet forwarder program
-Aug 12 16:16:27 pi04 systemd[1]: Starting The Things Network Gateway...
-Aug 12 16:16:27 pi04 systemd[1]: Started The Things Network Gateway.
-Aug 12 16:16:38 pi04 ttn-gateway[14558]: [TTN Gateway]: Waiting for internet connection...
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: *** Poly Packet Forwarder for Lora Gateway ***
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: Version: 2.1.0
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: *** Lora concentrator HAL library version info ***
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: Version: 3.1.0; Options: native;
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: ***
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Little endian host
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: found global configuration file global_conf.json, parsing it
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a JSON object named SX1301_conf, parsing SX1301 parameters
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: lorawan_public 1, clksrc 1
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Configuring TX LUT with 16 indexes
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: radio 0 enabled (type SX1257), center frequency 867500000, RSSI offset -166.000000, tx enabled 1
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: radio 1 enabled (type SX1257), center frequency 868500000, RSSI offset -166.000000, tx enabled 0
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 0>  radio 1, IF -400000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 1>  radio 1, IF -200000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 2>  radio 1, IF 0 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 3>  radio 0, IF -400000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 4>  radio 0, IF -200000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 5>  radio 0, IF 0 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 6>  radio 0, IF 200000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora multi-SF channel 7>  radio 0, IF 400000 Hz, 125 kHz bw, SF 7 to 12
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: Lora std channel> radio 1, IF -200000 Hz, 250000 Hz bw, SF 7
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: FSK channel> radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
-Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a JSON object named gateway_conf, 
-```
-
+Software Installation is straightforward, just follow the [dedicated installer][26].
 
 ### Schematic
 ![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
@@ -127,9 +60,13 @@ Aug 12 16:17:08 pi04 ttn-gateway[14558]: INFO: global_conf.json does contain a J
 You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
-### Assembled boards into nice enclosure
+### Assembled boards into nice enclosure with sensors
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/iC880A-mounted-enclosure.jpg" alt="Fully assembled and in nice enclosure">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-shield-lorawan-gateway.jpg" alt="Fully assembled and in nice enclosure with sensors">     
+
+Sensors values en Cayenne (see [installer][26] readme for setup)
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-gateway-monitoring-iot.jpg" alt="Gateway Monitoring with external sensors">     
+
 
 ##Bill Of Material
 
@@ -181,7 +118,7 @@ See news and other projects on my [blog][1]
 [24]: http://www.ebay.com/itm/371534934746
 
 [25]: https://www.adafruit.com/products/1979
-[26]: https://github.com/ttn-zh/ic880a-gateway/wiki
+[26]: https://github.com/ch2i/ic880a-gateway/tree/ch2i-rpi-shield
 
 [27]: http://www.ebay.com/itm/351674929937
 [28]: http://www.ebay.com/itm/371348168950
