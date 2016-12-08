@@ -86,6 +86,10 @@ use only what you need dependings on what you want to do.
 - Some 2X20 pins [PI connector][29] for pluging this board  
 - Antenna [UFL][22] with [IPEX][23] cable or [SMA][24] if using Lora Module
 - Small Enclosure 125x125mm 75mm Height [#1][40] or [#2][41]
+- optional [Outdoor protection sleeve][42] for SI7021/HTU21D
+- optional [Breakout][43] for enclosure temperature monitoring BME280
+
+
 
 ##License
 
@@ -128,3 +132,5 @@ See news and other projects on my [blog][1]
 
 [40]: http://www.ebay.com/itm/262500056078
 [41]: http://www.aliexpress.com/item/Free-Shipping-Good-Quality-ABS-Material-Transparent-Cover-IP66-Waterproof-Electrical-Switch-Box-125-125-75mm/32522255056.html
+[42]: http://www.aliexpress.com/item/Temperature-and-humidity-Protective-sleeve-Accessories-PCB-for-SHT20-SHT21-SHT25/32695663191.html?spm=2114.13010208.99999999.264.dgLxek
+[43]: http://www.ebay.com/itm/401000227934
