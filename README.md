@@ -88,8 +88,7 @@ use only what you need dependings on what you want to do.
 - Small Enclosure 125x125mm 75mm Height [#1][40] or [#2][41]
 - optional [Outdoor protection sleeve][42] for SI7021/HTU21D
 - optional [Breakout][43] for enclosure temperature monitoring BME280
-
-
+- 2 x [M4 Hex Brass Spacer Standoff][44] to fix board on enclosure, (higher give you more space below to put POE splitter for example) 25mm to 35mm is fine
 
 ##License
 
@@ -134,3 +133,4 @@ See news and other projects on my [blog][1]
 [41]: http://www.aliexpress.com/item/Free-Shipping-Good-Quality-ABS-Material-Transparent-Cover-IP66-Waterproof-Electrical-Switch-Box-125-125-75mm/32522255056.html
 [42]: http://www.aliexpress.com/item/Temperature-and-humidity-Protective-sleeve-Accessories-PCB-for-SHT20-SHT21-SHT25/32695663191.html?spm=2114.13010208.99999999.264.dgLxek
 [43]: http://www.ebay.com/itm/401000227934
+[44]: http://www.ebay.com/itm/182181715511?var=483966356069
