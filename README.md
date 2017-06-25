@@ -7,7 +7,7 @@ At the begining this shield has been created to help wiring between Raspberry PI
 
 Then I decided to add some funky stuff like:
 
-New in V1.2 (not tested yet but should be fine)
+**New in V1.2** (not tested yet but should be fine)
 
  - Added push button on GPIO19 to be able to shutdown PI Locally (if you don't use RFM95 with IRQ) 
  - Reversed DHT connector [#4][4]
@@ -15,7 +15,7 @@ New in V1.2 (not tested yet but should be fine)
  - Added footprint for Murata OKI-78SR-5 DC/DC 5V
  - Fixed Mini Voltmeter Holes Spacing
 
-Still V1.1 
+**Still V1.1** 
 
 - Footprint for [iC880a][10] ISMT LoraWan concentrator (main goal)
 - ~~Can be also used between LinkLabs [board][11] and Raspi~~
@@ -119,7 +119,7 @@ Sensors values en Cayenne (see [installer][26] readme for setup)
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-gateway-monitoring-iot.jpg" alt="Gateway Monitoring with external sensors">     
 
 
-##Bill Of Material
+###Bill Of Material
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
