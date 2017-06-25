@@ -41,7 +41,7 @@ If you need to use sensors you can check out these [examples][12], they're just 
 If you use linklabs board you can use these [version][2] of packet_forwarder, it has been modified to drive LED of linklabs boards and PPS modem line.
 
 Installation
-=============
+============
 
 No specific documentation for now, it's just a kind of wiring helper, please see Gateway section on [TTN Wiki][13] and Installation is quite easy but as the plate need to go over RPI network and USB connector, you need to use a 2x20 Raspberry PI connector such as [this one][25] form adafruit. You can also find some on ebay.
 
@@ -94,17 +94,18 @@ exit 0
 
 ```
 
-### Schematic
+Schematic
+=========
+
 ![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
 
-### Boards 
+Boards 
+======
 
 **Top side**
-
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.jpg" alt="PCB TOP">    
 
 **Bottom side**
-
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.jpg" alt="PCB TOP">    
 
 
@@ -119,7 +120,8 @@ Sensors values en Cayenne (see [installer][26] readme for setup)
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-gateway-monitoring-iot.jpg" alt="Gateway Monitoring with external sensors">     
 
 
-###Bill Of Material
+Bill Of Material
+================
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
@@ -144,7 +146,8 @@ use only what you need dependings on what you want to do.
 - 2 x [M4 Hex Brass Spacer Standoff][44] to fix board on enclosure, (higher give you more space below to put POE splitter for example) 25mm to 35mm is fine
 
 
-###License
+License
+=======
 
 <img alt="Creative Commons Attribution-NonCommercial 4.0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">   
 
