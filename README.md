@@ -183,7 +183,7 @@ See news and other projects on my [blog][1]
 [25]: https://www.adafruit.com/products/1979
 [26]: https://github.com/ch2i/ic880a-gateway/tree/ch2i-rpi-shield
 
-[27]: http://www.ebay.com/itm/351674929937
+[27]: http://www.ebay.com/itm/121929386506?var=420920026758
 [28]: http://www.ebay.com/itm/371348168950
 [29]: http://www.ebay.com/itm/351588181858
 
