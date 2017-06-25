@@ -7,6 +7,16 @@ At the begining this shield has been created to help wiring between Raspberry PI
 
 Then I decided to add some funky stuff like:
 
+New in V1.2 (not tested yet but should be fine)
+
+ - Added push button on GPIO19 to be able to shutdown PI Locally (if you don't use RFM95 with IRQ) 
+ - Reversed DHT connector [#4][4]
+ - Added FTDI connector to be able to take hand on PI console when in enclosure (lost network)
+ - Added footprint for Murata OKI-78SR-5 DC/DC 5V
+ - Fixed Mini Voltmeter Holes Spacing
+
+Still V1.1 
+
 - Footprint for [iC880a][10] ISMT LoraWan concentrator (main goal)
 - ~~Can be also used between LinkLabs [board][11] and Raspi~~
 - I2C and Grove connectors to be able to add internal/external sensors such as BME280, SI7021 or HTU21D
@@ -43,6 +53,47 @@ I suggest to plug the connector into the PI to see space needed then plug the pl
 
 Software Installation is straightforward, just follow the [dedicated installer][26].
 
+If you want to use the tactile switch (V1.2+) you need a script like this one, it will every 2s check if switch is pressed and if so, shutdown the GW. It's pooled every 2 seconds, so be sure so press it at least 2s. Here is my script located into
+
+`/opt/ttn-gateway/bin/off-button.sh`
+
+```` 
+#!/bin/bash
+
+BASE=/sys/class/gpio
+GPIO=19
+
+# Enable GPIO
+if [ ! -d "/sys/class/gpio/gpio$GPIO" ]; then
+  echo "$GPIO" > /sys/class/gpio/export
+fi
+
+
+# wait for pin to go high
+while [ true ]
+do
+	# Set GPIO as an input (in loop in case someone played with IO)
+	echo "in" > /sys/class/gpio/gpio$GPIO/direction
+
+  if [ "$(cat /sys/class/gpio/gpio$GPIO/value)" == '1' ]
+    then
+      echo "Raspberry Pi Shutting Down!"
+      halt &
+      exit 0
+  fi
+  sleep 2
+done
+````
+
+Of course you need to start it on bootup, quick and dirty method, add this line before `exit 0` in your `/etc/rc.local` file
+
+```
+# launch shutdown switch check script in background
+/opt/ttn-gateway/bin/off-button.sh &
+exit 0
+
+```
+
 ### Schematic
 ![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
 
@@ -74,7 +125,7 @@ Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anyw
 use only what you need dependings on what you want to do. 
 
 - ~~Adjustable DC/DC step down like this [one][18] or this [one][19]~~
-- Fixed 5V DC/DC step down like this 3A [one][27] or this 1.5A [one][28] 
+- Fixed 5V DC/DC step down like this 3A [one][27] or this 1.5A [one][28] or excellent Murata [OKI-78SR-5][44]
 - LED for 4 GPIO (4/23/18/24) are 3mm PTH or 0805, color of your choice
 - If you use RFM95, diode for DIO0/DIO1/DIO2 (if you want to use interrupts) are 1N4148 PTH or SOD123
 - POE Splitter such as [these][16] and POE injector as this [one][17]
@@ -88,21 +139,25 @@ use only what you need dependings on what you want to do.
 - Small Enclosure 125x125mm 75mm Height [#1][40] or [#2][41]
 - optional [Outdoor protection sleeve][42] for SI7021/HTU21D
 - optional [Breakout][43] for enclosure temperature monitoring BME280
+- optional tactile switch like this [one][46] or for external on enclosure this [one][47] (connect button LED to Heatbeat LED (GPIO4)
+- optional digital [voltmeter][48] to display input voltage
 - 2 x [M4 Hex Brass Spacer Standoff][44] to fix board on enclosure, (higher give you more space below to put POE splitter for example) 25mm to 35mm is fine
 
-##License
+
+###License
 
 <img alt="Creative Commons Attribution-NonCommercial 4.0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">   
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/)    
 If you want to do commercial stuff with this project, please contact [CH2i company](https://www.ch2i.eu/en#support) so we can organize an simple agreement.
 
-##Misc
+###Misc
 See news and other projects on my [blog][1] 
  
 [1]: https://hallard.me
 [2]: https://github.com/ch2i/packet_forwarder
 [3]: https://PCBs.io/share/rmVdD
+[4]: https://github.com/ch2i/iC880A-Raspberry-PI/issues/4
 
 [10]: http://webshop.imst.de/ic880a-spi-lorawan-concentrator-868mhz.html
 [11]: http://forum.thethingsnetwork.org/t/raspberry-pi-lorawan-gateway-board/1071
@@ -134,3 +189,7 @@ See news and other projects on my [blog][1]
 [42]: http://www.aliexpress.com/item/Temperature-and-humidity-Protective-sleeve-Accessories-PCB-for-SHT20-SHT21-SHT25/32695663191.html?spm=2114.13010208.99999999.264.dgLxek
 [43]: http://www.ebay.com/itm/401000227934
 [44]: http://www.ebay.com/itm/182181715511?var=483966356069
+[45]: http://www2.mouser.com/ProductDetail/Murata-Power-Solutions/OKI-78SR-5-15-W36H-C/?qs=sGAEpiMZZMt6Q9lZSPl3Rb6uckMsyldgZf%2f4GdkUxM8%3d
+[46]: http://www.ebay.com/itm/391462862706
+[47]: http://www.ebay.com/itm/232153789354?var=531358445664
+[48]: http://www.ebay.com/itm/301856945402
