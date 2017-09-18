@@ -1,18 +1,20 @@
 Raspberry PI iC880A and LinkLab Lora Gateway Shield
 ===================================================
 
-<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-mounted.jpg" alt="Full stack">     
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ic880a-mounted-V12.jpg" alt="Full stack">     
+
+<img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-shield-enclosure.jpg" alt="Full stack">     
 
 At the begining this shield has been created to help wiring between Raspberry PI and ISMT [iC880A][10] LoraWan concentrator Gateway (SPI version) and to be able to put the whole thing into a outdoor enclosure such as this [one][15].
 
 Then I decided to add some funky stuff like:
 
-**New in V1.2** (not tested yet but should be fine)
+**New in V1.2** (tested, working fine)
 
  - Added push button on GPIO19 to be able to shutdown PI Locally (if you don't use RFM95 with IRQ) 
  - Reversed DHT connector [#4][4]
- - Added FTDI connector to be able to take hand on PI console when in enclosure (lost network)
- - Added footprint for Murata OKI-78SR-5 DC/DC 5V
+ - Added FTDI connector to be able to take hand on PI console when in enclosure (lost network or whatever, no more need to get all off the enclosure and connect HDMI cable to see what's going on)
+ - Added footprint for excellent Murata OKI-78SR-5 DC/DC 5V
  - Fixed Mini Voltmeter Holes Spacing
 
 **Still V1.1** 
