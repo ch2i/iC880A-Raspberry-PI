@@ -1,5 +1,4 @@
-Raspberry PI iC880A and LinkLab Lora Gateway Shield
-===================================================
+# Raspberry PI iC880A and LinkLab Lora Gateway Shield
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ic880a-mounted-V12.jpg" alt="Full stack">     
 
@@ -30,8 +29,8 @@ Then I decided to add some funky stuff like:
 - Easy to build and solder, 0805 or PTH components
 - Holes to fix board on enclosure or other support
 
-Detailed Description
-====================
+# Detailed Description
+
 
 No specific documentation for now, it's just a kind of wiring helper, please see Gateway section on [TTN Wiki][13] and also on [TTN Forums][14] for more information on these gateways.
 
@@ -42,67 +41,17 @@ If you need to use sensors you can check out these [examples][12], they're just 
 
 If you use linklabs board you can use these [version][2] of packet_forwarder, it has been modified to drive LED of linklabs boards and PPS modem line.
 
-Installation
-============
+# Installation
 
 No specific documentation for now, it's just a kind of wiring helper, please see Gateway section on [TTN Wiki][13] and Installation is quite easy but as the plate need to go over RPI network and USB connector, you need to use a 2x20 Raspberry PI connector such as [this one][25] form adafruit. You can also find some on ebay.
 
-This specific version of [poly_packet_forwarder][30] for Raspbery PI use bcm2835 library, you need to install it before anything. See http://www.airspayce.com/mikem/bcm2835/
+See generic SX1031 Lora Gateway setup for software [installation](https://github.com/ch2i/LoraGW-Setup)
 
-For driving specific onboard LED with packet forwarder, please see the specific readme file of the [poly_packet_forwarder][30] to adjust you json config file.
-
-I suggest to plug the connector into the PI to see space needed then plug the plate to the connector and start soledering one pin on each edge so the connector will be fixed, then remove plate and connector and solder all other pins.
-
-Software Installation is straightforward, just follow the [dedicated installer][26].
-
-If you want to use the tactile switch (V1.2+) you need a script like this one, it will every 2s check if switch is pressed and if so, shutdown the GW. It's pooled every 2 seconds, so be sure so press it at least 2s. Here is my script located into
-
-`/opt/ttn-gateway/bin/off-button.sh`
-
-```` 
-#!/bin/bash
-
-BASE=/sys/class/gpio
-GPIO=19
-
-# Enable GPIO
-if [ ! -d "/sys/class/gpio/gpio$GPIO" ]; then
-  echo "$GPIO" > /sys/class/gpio/export
-fi
-
-
-# wait for pin to go high
-while [ true ]
-do
-	# Set GPIO as an input (in loop in case someone played with IO)
-	echo "in" > /sys/class/gpio/gpio$GPIO/direction
-
-  if [ "$(cat /sys/class/gpio/gpio$GPIO/value)" == '1' ]
-    then
-      echo "Raspberry Pi Shutting Down!"
-      halt &
-      exit 0
-  fi
-  sleep 2
-done
-````
-
-Of course you need to start it on bootup, quick and dirty method, add this line before `exit 0` in your `/etc/rc.local` file
-
-```
-# launch shutdown switch check script in background
-/opt/ttn-gateway/bin/off-button.sh &
-exit 0
-
-```
-
-Schematic
-=========
+# Schematic
 
 ![schematic](https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-sch.png)  
 
-Boards 
-======
+# Boards 
 
 **Top side**
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-top.jpg" alt="PCB TOP">    
@@ -114,7 +63,7 @@ Boards
 You can order the PCB of this board at [PCBs.io][3]. Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
-### Assembled boards into nice enclosure with sensors
+## Assembled boards into nice enclosure with sensors
 
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-shield-lorawan-gateway.jpg" alt="Fully assembled and in nice enclosure with sensors">     
 
@@ -122,8 +71,7 @@ Sensors values en Cayenne (see [installer][26] readme for setup)
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/ch2i-gateway-monitoring-iot.jpg" alt="Gateway Monitoring with external sensors">     
 
 
-Bill Of Material
-================
+## Bill Of Material
 
 Nothing fancy, all components are 0805 and/or PTH and can be ordered almost anywhere (digikey, mouser, radiospare, ...). 
 use only what you need dependings on what you want to do. 
@@ -148,16 +96,14 @@ use only what you need dependings on what you want to do.
 - 2 x [M4 Hex Brass Spacer Standoff][44] to fix board on enclosure, (higher give you more space below to put POE splitter for example) 25mm to 35mm is fine
 
 
-License
-=======
+# License
 
 <img alt="Creative Commons Attribution-NonCommercial 4.0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">   
 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/)    
 If you want to do commercial stuff with this project, please contact [CH2i company](https://www.ch2i.eu/en#support) so we can organize an simple agreement.
 
-Misc
-====
+# Misc
 
 See news and other projects on my [blog][1] 
  
