@@ -60,7 +60,7 @@ See generic SX1031 Lora Gateway setup for software [installation](https://github
 <img src="https://raw.githubusercontent.com/ch2i/iC880A-Raspberry-PI/master/pictures/RPI-Lora-Gateway-Shield-bot.jpg" alt="PCB TOP">    
 
 
-You can order the PCB of this board on my [tindie store][https://www.tindie.com/products/hallard/ic880a-lora-concentrator-shield-raspberry-pi/] located in EU or at [PCBs.io][3] (not sure PCBs.io still alive). Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
+You can order the PCB of this board on my [tindie store](https://www.tindie.com/products/hallard/)ic880a-lora-concentrator-shield-raspberry-pi/] located in EU or at [PCBs.io][3] (not sure PCBs.io still alive). Don't worry they still have a bug with top/bottom thumbails view but final boards are okay
 PCBs.io give me some reward when you order my designed boards from their site. This is pretty good, because I can use these rewards to create and design new boards and order boards for a discounted price, so if you don't care about PCB manufacturer please use PCBs.io.
 
 [<img src="https://d2ss6ovg47m0r5.cloudfront.net/badges/tindie-mediums.png" alt="I sell on Tindie" width="150" height="78">](https://www.tindie.com/stores/hallard/?ref=offsite_badges&utm_source=sellers_Hallard&utm_medium=badges&utm_campaign=badge_medium)
